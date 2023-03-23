@@ -1,0 +1,29 @@
+//Calculate heartbeat
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+   /* Type your code here. */
+   double ageYrs;
+   double weightlbs;
+   double heartRate;
+   double timeMin;
+   double caloriesBurned;
+   //do these need to be doubles?
+   
+   //get user input
+   cin >> ageYrs >> weightlbs >> heartRate >> timeMin;   
+   
+   //set to 2 digits after decimal for each float:
+   cout << fixed << setprecision(2);
+   
+   //calculate cals burnt
+   caloriesBurned = ((ageYrs * 0.2757) + (weightlbs * 0.03295) + (heartRate * 1.0781) - 75.4991) * timeMin / 8.368;
+   
+   //output calories
+   cout << "Calories: " << caloriesBurned << " calories" << endl;
+   
+   return 0;
+}
