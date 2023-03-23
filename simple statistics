@@ -1,0 +1,31 @@
+
+//simple statistics
+/*with given inputs it still wont add 3 decimals to teh second set of values
+converting them all to doubles makes it so that youd have to specify no digits post decimal which is not the advisory so i doubt its that 
+would turning just 1 variable convert it to an int first round? and then let it be decimal second round?*/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+   int num1;
+   int num2;
+   int num3;
+   int num4;
+
+   /* Type your code here. */
+   
+   //get user input
+   cin >> num1 >> num2 >> num3 >> num4;
+   
+   //output product and average
+   cout << num1 * num2 * num3 * num4 << " ";
+   cout << (num1 + num2 + num3 + num4) / 4 << endl;
+   
+   cout << fixed << setprecision(3) << num1 * num2 * num3 * num4 << " " << (num1 + num2 + num3 + num4) / 4 << endl;
+
+
+   return 0;
+}
+
