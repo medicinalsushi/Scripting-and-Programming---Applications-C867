@@ -1,0 +1,31 @@
+//use math functions
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+   double x;
+   double y;
+   double z;
+
+   /* Type your code here. Note: Include the math library above first. */
+   
+   //get user input
+   cin >> x >> y >> z;
+   
+   //x to the power of z
+   cout << pow(x,z) << " ";
+   
+   //x to the power of (y to the power of z)
+   cout << pow(x,pow(y,z)) << " ";
+   
+   //abs val of y
+   cout << fabs(y) << " ";
+   
+   //sq rt of (xy^z)
+   cout << sqrt(pow((x * y),z)) << endl;
+
+   return 0;
+}
+
+
