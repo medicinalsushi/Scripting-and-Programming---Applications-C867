@@ -1,0 +1,23 @@
+//Replace any alphabetic character with '_' in 2-character string passCode. 
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+   string passCode;
+
+   cin >> passCode;
+
+   /* Your solution goes here  */
+   if (isalpha(passCode.at(0))) {
+      passCode.at(0) = '_';
+   }
+   
+   if (isalpha(passCode.at(1))) {
+      passCode.at(1) = '_';
+   }
+
+   cout << passCode << endl;
+   return 0;
+}
