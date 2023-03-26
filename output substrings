@@ -1,0 +1,21 @@
+//output substring of strVal specified by indexBegin and substrLen 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   string strVal;
+   int indexBegin;
+   int substrLen;
+
+   getline(cin, strVal);
+   cin >> indexBegin;
+   cin >> substrLen;
+
+   /* Your code goes here */
+   cout << strVal.substr(indexBegin, substrLen) << endl;
+   
+
+   return 0;
+}
