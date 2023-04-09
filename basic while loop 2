@@ -1,0 +1,19 @@
+//Write a while loop that prints userNum divided by 4 (integer division) until reaching 2 or less. Follow each number by a space. eg. 160 would output 40 10 2
+#include <iostream>
+using namespace std;
+
+int main() {
+   int userNum;
+
+   cin >> userNum;
+//have to start while with condtion of /4
+ while ( (userNum / 4) >= 2) {
+    cout << userNum / 4 << " ";
+//have to output result as /4
+    userNum = userNum / 4;
+//reassign to prevent infinite loop
+   }
+   cout << endl;
+
+   return 0;
+}
