@@ -11,10 +11,11 @@ int main() {
    string searchName;
    string theTld;
    bool isCoreGtld;
-   // FIXME: Add variable periodCounter to count periods in a domain name
-   int periodPosition;   // Position of the period in the domain name
+   int periodCounter;
+   int periodPosition;
    unsigned int j;
-
+   unsigned int i;
+      
    coreGtld1 = ".com";
    coreGtld2 = ".net";
    coreGtld3 = ".org";
@@ -33,33 +34,36 @@ int main() {
       }
       isCoreGtld = false;
 
-      // FIXME: Write a for loop using variable i to store in periodCounter the
-      //        number of periods in searchName. Store the position of the period in
-      //        periodPosition. If searchName has exactly one period and searchName's
-      //        first character is not a period, determine whether searchName has a 
-      //        valid core gTLD by extracting the domain name into variable theTld
-      //        and comparing the name with valid core gTLDs.
+      periodCounter = 0;
+      for (i = 0; i < searchName.size(); ++i) {
+         if (searchName.at(i) == '.') {
+            periodCounter++;
+            periodPosition = i;
+         }
+      }
 
-      // Extract the top-level domain name starting at the period's position.
-      // Ex: If searchName = "example.com", the next statement extracts ".com"
-      theTld = searchName.substr(periodPosition);
+      if ((periodCounter == 1) && (searchName.at(0) != '.')) {
+         // Extract the top-level domain name starting at the period's position.
+         // Ex: If searchName = "example.com", the next statement extracts ".com"
+         theTld = searchName.substr(periodPosition);
 
-      if (theTld == coreGtld1) {
-         isCoreGtld = true;
+         if (theTld == coreGtld1) {
+            isCoreGtld = true;
+         }
+         else if (theTld == coreGtld2) {
+            isCoreGtld = true;
+         }
+         else if (theTld == coreGtld3) {
+            isCoreGtld = true;
+         }
+         else if (theTld == coreGtld4) {
+            isCoreGtld = true;
+         }
+         else {
+            isCoreGtld = false;
+         }
       }
-      else if (theTld == coreGtld2) {
-         isCoreGtld = true;
-      }
-      else if (theTld == coreGtld3) {
-         isCoreGtld = true;
-      }
-      else if (theTld == coreGtld4) {
-         isCoreGtld = true;
-      }
-      else {
-         isCoreGtld = false;
-      }
-      
+
       cout << "\"" << inputName << "\" ";
       if (isCoreGtld) {
          cout << "is a second-level domain followed by a core gTLD of \"" <<
