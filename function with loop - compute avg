@@ -1,0 +1,35 @@
+//compute avg of a list of numbers
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double ComputeAverage(int numCount) {
+   double valuesSum = 0;
+   int currValue = 0;
+
+   for (int i = 0; i < numCount; ++i) {
+      cout << "Enter number: ";
+      cin >> currValue;
+      valuesSum += currValue;
+   }
+   return valuesSum / numCount;
+}
+
+int main() {
+   int numValues;
+   double averageVal;
+
+   cout << "Enter number of values: ";
+   cin >> numValues;
+   averageVal = ComputeAverage(numValues);
+
+   cout << "Average: ";
+   cout << fixed << setprecision(3) << averageVal << endl;
+   return 0;
+}
+
+//how many calls to user defined functions exist in main()?
+//1
+
+//What does ComputeAverage() return if the input is 4 2 3 4 5? Type as #.#. Note: The first number is the number of values in the list.
+//3.5 will be the avg. The first number, 4, is the number of values in the list. The for loop iterates four times, computing the sum of the numbers. ComputeAverage() then returns sum / 4. Sum = 2 + 3 + 4 + 5 = 14 Average = 14 / 4 = 3.5
