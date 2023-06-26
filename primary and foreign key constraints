@@ -1,0 +1,34 @@
+The given SQL creates an Album table and a Song table. The SHOW COLUMNS queries show information about the Album and Song table columns.
+
+Modify the two CREATE TABLE statements:
+
+Add a primary key constraint to the Album table's ID column.
+Add a primary key constraint to the Song table's ID column.
+Add a foreign key constraint to the Song table so the AlbumID column refers to the Album table's ID column.
+
+
+
+SOLUTION
+-- Add a primary key
+CREATE TABLE Album (
+  ID INT,
+  Title VARCHAR(60),
+  ReleaseYear INT,
+  PRIMARY KEY (ID)
+);
+
+-- Add primary and foreign keys
+CREATE TABLE Song (
+  ID INT,
+  Title VARCHAR(60),
+  Artist VARCHAR(60),
+  AlbumID INT,
+  PRIMARY KEY (ID),
+  FOREIGN KEY (AlbumID) REFERENCES Album(ID)
+);
+
+SHOW COLUMNS
+FROM Album;
+
+SHOW COLUMNS
+FROM Song;
