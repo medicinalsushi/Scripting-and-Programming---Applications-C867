@@ -1,4 +1,4 @@
-# cs867
+# Scripting and Programming - Applications – C867
 
 Scripting and Programming - Applications – C867
 
